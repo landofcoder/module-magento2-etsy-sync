@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="FetchOrder" xsi:type="object">Lof\EtsySync\Console\Command\FetchOrder</item>
+				<item name="ExecuteOrder" xsi:type="object">Lof\EtsySync\Console\Command\ExecuteOrder</item>
+				<item name="TrackingOrder" xsi:type="object">Lof\EtsySync\Console\Command\TrackingOrder</item>
+				<item name="PullItem" xsi:type="object">Lof\EtsySync\Console\Command\PullItem</item>
+				<item name="PushItem" xsi:type="object">Lof\EtsySync\Console\Command\PushItem</item>
+				<item name="UpdateQtyItem" xsi:type="object">Lof\EtsySync\Console\Command\UpdateQtyItem</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Lof\EtsySync\Api\EtsyOrderRepositoryInterface" type="Lof\EtsySync\Model\EtsyOrderRepository"/>
+	<preference for="Lof\EtsySync\Api\Data\EtsyOrderInterface" type="Lof\EtsySync\Model\Data\EtsyOrder"/>
+	<preference for="Lof\EtsySync\Api\Data\EtsyOrderSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Lof\EtsySync\Model\ResourceModel\EtsyOrder\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">lof_etsysync_etsyorder</argument>
+			<argument name="resourceModel" xsi:type="string">Lof\EtsySync\Model\ResourceModel\EtsyOrder\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="lof_etsysync_etsyorder_listing_data_source" xsi:type="string">Lof\EtsySync\Model\ResourceModel\EtsyOrder\Grid\Collection</item>
+				<item name="lof_etsysync_etsyproduct_listing_data_source" xsi:type="string">Lof\EtsySync\Model\ResourceModel\EtsyProduct\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Lof\EtsySync\Api\EtsyProductRepositoryInterface" type="Lof\EtsySync\Model\EtsyProductRepository"/>
+	<preference for="Lof\EtsySync\Api\Data\EtsyProductInterface" type="Lof\EtsySync\Model\Data\EtsyProduct"/>
+	<preference for="Lof\EtsySync\Api\Data\EtsyProductSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Lof\EtsySync\Model\ResourceModel\EtsyProduct\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">lof_etsysync_etsyproduct</argument>
+			<argument name="resourceModel" xsi:type="string">Lof\EtsySync\Model\ResourceModel\EtsyProduct\Collection</argument>
+		</arguments>
+	</virtualType>
+</config>

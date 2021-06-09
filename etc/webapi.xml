@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/lof-etsysync/etsyorder" method="POST">
+		<service class="Lof\EtsySync\Api\EtsyOrderRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyOrder_save"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyorder/search" method="GET">
+		<service class="Lof\EtsySync\Api\EtsyOrderRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyOrder_view"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyorder/:etsyorderId" method="GET">
+		<service class="Lof\EtsySync\Api\EtsyOrderRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyOrder_view"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyorder/:etsyorderId" method="PUT">
+		<service class="Lof\EtsySync\Api\EtsyOrderRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyOrder_update"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyorder/:etsyorderId" method="DELETE">
+		<service class="Lof\EtsySync\Api\EtsyOrderRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyOrder_delete"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyproduct" method="POST">
+		<service class="Lof\EtsySync\Api\EtsyProductRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyProduct_save"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyproduct/search" method="GET">
+		<service class="Lof\EtsySync\Api\EtsyProductRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyProduct_view"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyproduct/:etsyproductId" method="GET">
+		<service class="Lof\EtsySync\Api\EtsyProductRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyProduct_view"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyproduct/:etsyproductId" method="PUT">
+		<service class="Lof\EtsySync\Api\EtsyProductRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyProduct_update"/>
+		</resources>
+	</route>
+	<route url="/V1/lof-etsysync/etsyproduct/:etsyproductId" method="DELETE">
+		<service class="Lof\EtsySync\Api\EtsyProductRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Lof_EtsySync::EtsyProduct_delete"/>
+		</resources>
+	</route>
+</routes>

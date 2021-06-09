@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="lof_etsysync_etsyorder" resource="default" engine="innodb" comment="lof_etsysync_etsyorder Table">
+		<column xsi:type="smallint" name="etsyorder_id" padding="6" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="etsyorder_id"/>
+		</constraint>
+		<column name="entity_id" nullable="true" xsi:type="int" comment="entity_id" identity="false"/>
+		<column name="platform_id" nullable="true" xsi:type="text" comment="platform_id"/>
+		<column name="created_at" nullable="true" xsi:type="datetime" comment="created_at"/>
+		<column name="updated_at" nullable="true" xsi:type="datetime" comment="updated_at"/>
+		<column name="imported_at" nullable="true" xsi:type="timestamp" comment="imported_at" default="CURRENT_TIMESTAMP"/>
+		<column name="currency" nullable="true" xsi:type="text" comment="currency"/>
+		<column name="status" nullable="true" xsi:type="text" comment="status"/>
+		<column name="shipping_total" nullable="true" xsi:type="decimal" comment="shipping_total" scale="4" precision="12"/>
+		<column name="discount_total" nullable="true" xsi:type="decimal" comment="discount_total" scale="4" precision="12"/>
+		<column name="total" nullable="true" xsi:type="decimal" comment="total" scale="4" precision="12"/>
+		<column name="total_with_tax" nullable="true" xsi:type="decimal" comment="total_with_tax" scale="4" precision="12"/>
+		<column name="customer_note" nullable="true" xsi:type="text" comment="customer_note"/>
+		<column name="buyer_id" nullable="true" xsi:type="text" comment="buyer_id"/>
+		<column name="platform_customer_id" nullable="true" xsi:type="text" comment="platform_customer_id"/>
+		<column name="payment_method" nullable="true" xsi:type="text" comment="payment_method"/>
+		<column name="line_items" nullable="true" xsi:type="text" comment="line_items"/>
+		<column name="shipping" nullable="true" xsi:type="text" comment="shipping"/>
+		<column name="billing" nullable="true" xsi:type="text" comment="billing"/>
+		<column name="tracking" nullable="true" xsi:type="text" comment="tracking"/>
+		<column name="magento_order_id" nullable="true" xsi:type="text" comment="magento_order_id"/>
+		<column name="magento_customer_id" nullable="true" xsi:type="int" comment="magento_customer_id" identity="false"/>
+	</table>
+	<table name="lof_etsysync_etsyproduct" resource="default" engine="innodb" comment="lof_etsysync_etsyproduct Table">
+		<column xsi:type="smallint" name="etsyproduct_id" padding="6" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="etsyproduct_id"/>
+		</constraint>
+		<column name="entity_id" nullable="true" xsi:type="int" comment="entity_id" identity="false"/>
+		<column name="created_at" nullable="true" xsi:type="datetime" comment="created_at"/>
+		<column name="updated_at" nullable="true" xsi:type="datetime" comment="updated_at"/>
+		<column name="platform_id" nullable="true" xsi:type="text" comment="platform_id"/>
+		<column name="store_id" nullable="true" xsi:type="text" comment="store_id"/>
+		<column name="name" nullable="true" xsi:type="text" comment="name"/>
+		<column name="slug" nullable="true" xsi:type="text" comment="slug"/>
+		<column name="permalink" nullable="true" xsi:type="text" comment="permalink"/>
+		<column name="type" nullable="true" xsi:type="text" comment="type"/>
+		<column name="status" nullable="true" xsi:type="text" comment="status"/>
+		<column name="description" nullable="true" xsi:type="text" comment="description"/>
+		<column name="price" nullable="true" xsi:type="decimal" comment="price" scale="4" precision="12"/>
+		<column name="sale_price" nullable="true" xsi:type="decimal" comment="sale_price" scale="4" precision="12"/>
+		<column name="tax" nullable="true" xsi:type="decimal" comment="tax" scale="4" precision="12"/>
+		<column name="weight" nullable="true" xsi:type="decimal" comment="weight" scale="4" precision="12"/>
+		<column name="shipping_info" nullable="true" xsi:type="text" comment="shipping_info"/>
+		<column name="categories" nullable="true" xsi:type="text" comment="categories"/>
+		<column name="tags" nullable="true" xsi:type="text" comment="tags"/>
+		<column name="images" nullable="true" xsi:type="text" comment="images"/>
+		<column name="attributes" nullable="true" xsi:type="text" comment="attributes"/>
+		<column name="variations" nullable="true" xsi:type="text" comment="variations"/>
+		<column name="variations_info" nullable="true" xsi:type="text" comment="variations_info"/>
+		<column name="magento_product_id" nullable="true" xsi:type="int" comment="magento_product_id" identity="false"/>
+		<column name="product_sku" nullable="true" xsi:type="text" comment="product_sku"/>
+	</table>
+</schema>

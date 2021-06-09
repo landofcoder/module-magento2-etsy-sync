@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Lof::top_level" title="Lof" module="Lof_EtsySync" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Lof_EtsySync::lof_etsysync_etsyorder" title="EtsyOrder" module="Lof_EtsySync" sortOrder="9999" resource="Magento_Backend::content" parent="Lof::top_level" action="lof_etsysync/etsyorder/index"/>
+		<add id="Lof_EtsySync::lof_etsysync_etsyproduct" title="EtsyProduct" module="Lof_EtsySync" sortOrder="9999" resource="Magento_Backend::content" parent="Lof::top_level" action="lof_etsysync/etsyproduct/index"/>
+	</menu>
+</config>

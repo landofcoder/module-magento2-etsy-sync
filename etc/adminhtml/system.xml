@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="landofcoder" translate="label" sortOrder="999">
+			<label>Landofcoder</label>
+		</tab>
+		<section id="lofetsysync" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Etsy Sync</label>
+			<tab>landofcoder</tab>
+			<resource>Lof_EtsySync::config_lof_etsysync</resource>
+			<group id="general" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>General</label>
+				<field id="enabled" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Enabled</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="etsy_keystring" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Etsy Key String</label>
+					<comment/>
+				</field>
+				<field id="etsy_secret" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Etsy Secret Key</label>
+					<comment/>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

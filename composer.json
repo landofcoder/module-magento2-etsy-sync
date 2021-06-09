@@ -1,0 +1,25 @@
+{
+    "name": "landofcoder/module-etsysync",
+    "description": "Magento 2 etsy sync products, orders, customers",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Landofcoder",
+            "email": "info@landofcoder.com",
+            "homepage": "https://landofcoder.com",
+            "role": "Magento 2 Extension Provider"
+        }
+    ],
+    "minimum-stability": "dev",
+    "version": "1.0.0",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Lof\\EtsySync\\": ""
+        }
+    }
+}
